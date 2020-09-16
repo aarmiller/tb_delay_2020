@@ -6,7 +6,7 @@ The following files contain the pseudo code and R code that can be used to dupli
 
 The scripts folder contains the scripts utilized in the analysis:
 
-build_matched_cohorts.R - This script contains the procedures for identifying cohorts of carriers or cases of CF along with the corresponding matched cohorts. This code specifically identifies the enrollee id's to extract. After running a this script you would then need to extract the data for these enrollees from the Truven database. Note: on our system we extract the enrollee id's then store all the extracted data in a relational (SQLite) database.
+make_final_tb_cohort.R - basic R script that was used to identify and build the TB cohort utilized in the analysis. Script also identifies the date and setting of index tb visit abd shift the index to the first drug date (i.e. Isoniazid and Rifampin, Pyrazinamide, or ethambutol) if the drug date occured prior to the index tb visit date.
 
 main_analysis.R - This script contains the code for running the primary analysis in the study. Note: this script uses the database of matched cohorts created from the enrollee id's identified in the build_mathced_cohorts.R script. This script also relies on the condition codesidentified in the condition_codes.R script and utilizes function from the analysis_functions.R and the small_db_functions.R scripts.
 
