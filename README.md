@@ -10,6 +10,4 @@ make_final_tb_cohort.R - basic R script that was used to identify and build the 
 
 main_analysis.R - This script contains the code for running the primary analysis in the study. Note: this script uses the database of matched cohorts created from the enrollee id's identified in the build_mathced_cohorts.R script. This script also relies on the condition codesidentified in the condition_codes.R script and utilizes function from the analysis_functions.R and the small_db_functions.R scripts.
 
-figures.R - This script contains all of the code that was used to generate the figures for the paper. This script utilizes the data containing odds ratio estimates that were generated in the main_analysis.R script. This script also utilizes functions contained in the analysis_functions.R script.
-
 simulation.R - This script condatins the procedures and code that would need to be used to run the simulation analysis described in the appendix of the paper.
