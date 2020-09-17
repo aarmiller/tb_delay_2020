@@ -8,6 +8,6 @@ The scripts folder contains the scripts utilized in the analysis:
 
 make_final_tb_cohort.R - basic R script that was used to identify and build the TB cohort utilized in the analysis. Script also identifies the date and setting of index tb visit abd shift the index to the first drug date (i.e. Isoniazid and Rifampin, Pyrazinamide, or ethambutol) if the drug date occured prior to the index tb visit date.
 
-main_analysis.R - This script contains the code for running the primary analysis in the study. Note: this script uses the database of matched cohorts created from the enrollee id's identified in the build_mathced_cohorts.R script. This script also relies on the condition codesidentified in the condition_codes.R script and utilizes function from the analysis_functions.R and the small_db_functions.R scripts.
+main_analysis_datasets.R - This script contains the basic R script that was used to generate dataset for simulations and for the logistic regression analysis. 
 
-simulation.R - This script condatins the procedures and code that would need to be used to run the simulation analysis described in the appendix of the paper.
+run_simulations.R - This script contains the basic R script that was used to run simulations to estimate the incidence of diagnostic delays for any SSD visits only and all visits.
