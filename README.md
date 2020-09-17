@@ -6,7 +6,7 @@ The following files contain the pseudo code and R code that can be used to dupli
 
 The scripts folder contains the scripts utilized in the analysis:
 
-make_final_tb_cohort.R - basic R script that was used to identify and build the TB cohort utilized in the analysis. Script also identifies the date and setting of index tb visit abd shift the index to the first drug date (i.e. Isoniazid and Rifampin, Pyrazinamide, or ethambutol) if the drug date occured prior to the index tb visit date.
+make_final_tb_cohort.R - The basic R script that was used to identify and build the TB cohort utilized in the analysis. Script also identifies the date and setting of index tb visit abd shift the index to the first drug date (i.e. Isoniazid and Rifampin, Pyrazinamide, or ethambutol) if the drug date occured prior to the index tb visit date.
 
 main_analysis_datasets.R - This script contains the basic R script that was used to generate datasets for simulations and for the logistic regression analysis. 
 
