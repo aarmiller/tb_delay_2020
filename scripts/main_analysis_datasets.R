@@ -91,7 +91,7 @@ time_map <- tb_time_map %>%
 ## variable for each visit in tb time map
 ssd_inds <- build_dx_indicators_delay(condition_dx_list = ssds, 
                                       db_path = db_path,
-                                    db_con = db_con) %>%
+                                      db_con = db_con) %>%
     rename(any_ssd=any_ind)
 
 
@@ -179,7 +179,7 @@ enroll_collapsed <- gather_collapse_enrollment(enrolid_list = final_time_map %>%
                                                               .$enrolid,
                                         vars = c("egeoloc", "msa", 
                                                  "plantyp","indstry"),
-                                        db_con = db_con)
+                                        db_path = db_path)
 
 ## Merge collapsed enrollment data with index dataset
 demo1 <- enroll_collapsed %>% mutate(enrolid = as.integer(enrolid)) %>% 
@@ -219,7 +219,7 @@ demographics <- demographics %>% left_join(fluro_visits) %>%
 ### Asthma and COPD indicators ###
 ## Identify visit where asthma was coded, filter to visits that occured
 ## prior to change point and create indicators by enrolid
-asthma <- dx_data %>% filter(dx %in% c(asthma$icd9_codes,asthma$icd10_codes)) %>%
+asthma <- dx_data %>% filter(dx %in% c(asthma$icd9_codes, asthma$icd10_codes)) %>%
   filter(days_since_dx< change_point & days_since_dx >=-365) %>% 
   distinct(enrolid) %>% mutate(asthma_365_cp = 1L) 
 
@@ -246,8 +246,8 @@ chest_xray <- c("71010", "71015", "71020", "71021", "71022", "71023",
                 "71045", "71046", "71047", "71048")
 
 ## Gather visits with the relevant cpt codes
-chest_cpt_visits <- gether_proc_data(cpt_codes = c(chest_xray, chest_ct), 
-                                     db_con = db_con)
+chest_cpt_visits <- gather_proc_data(cpt_codes = c(chest_xray, chest_ct), 
+                                     db_path = db_path)
 
 ## Create time map for chest xray and CT 
 chest_cpt_time_map <- chest_cpt_visits %>% 

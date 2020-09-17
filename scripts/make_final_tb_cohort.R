@@ -32,7 +32,7 @@ tb_dx_codes <- list(icd9_codes = children(c("010","011","012","018")) %>% unique
                     icd10_codes = children(c("A15","A19")) %>% unique())
 
 ## Gather all visit keys containing the specific TB diagnosis codes
-tb_keys <- delayDX::build_dx_indicators_delay(dx_list = tb_dx_codes, db_con = db_tb,
+tb_keys <- build_dx_indicators_delay(dx_list = tb_dx_codes, db_con = db_tb,
                                          db_path = db_path,
                                          return_keys_only  = TRUE)
 
@@ -51,8 +51,7 @@ tb_drug_codes <- tibble(drug_name=tb_drugs) %>%
   unnest()
 
 ## Gather all drug visit for a specific database of interest
-tb_drug_visits <- gether_rx_data_delay(ndc_codes = unique(tb_drug_codes$ndcnum),
-                                 db_con = db_tb,
+tb_drug_visits <- gather_rx_data(ndc_codes = unique(tb_drug_codes$ndcnum),
                                  db_path = db_path) %>% 
   filter(setting=="inpatient") # this step is just to remove duplicates could 
                                # also filter to just outpatient
