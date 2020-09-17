@@ -1,5 +1,5 @@
 
-##### This script contains the basic R script that was used to generate dataset
+##### This script contains the basic R script that was used to generate datasets
 ##### for simulations and for the logistic regression analysis
 ##### NOTE: This script contains a combination of actual and psuedo code. 
 
